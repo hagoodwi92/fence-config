@@ -1,0 +1,2 @@
+{"/Users/hughgoodwin/Desktop/csci/tester/src/bst-node.js": {"path":"/Users/hughgoodwin/Desktop/csci/tester/src/bst-node.js","statementMap":{"0":{"start":{"line":3,"column":4},"end":{"line":3,"column":21}}},"fnMap":{"0":{"name":"(anonymous_0)","decl":{"start":{"line":2,"column":2},"end":{"line":2,"column":3}},"loc":{"start":{"line":2,"column":19},"end":{"line":4,"column":3}},"line":2}},"branchMap":{},"s":{"0":0},"f":{"0":0},"b":{},"_coverageSchema":"43e27e138ebf9cfc5966b082cf9a028302ed4184","hash":"d8c7a584310d87a19bbe5007281e0438a5f58fc8"}
+}
