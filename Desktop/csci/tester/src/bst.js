@@ -11,7 +11,7 @@ export default class BST {
       while (true) {
         if (currentNode.data === value) {
           currentNode.data = null;
-          return this;
+          return currentNode;
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
         } else if (currentNode.data < value) {
