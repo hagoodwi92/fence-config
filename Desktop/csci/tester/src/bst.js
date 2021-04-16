@@ -11,10 +11,30 @@ export default class BST {
       while (true) {
         if (currentNode.data === value) {
           //if no children
-          if (currentNode.data.right == null || currentNode.data.left == null) {
-            currentNode.data = null;
-          }
+          currentNode.data = null;
           return currentNode;
+        } else if (currentNode.data > value) {
+          currentNode = currentNode.left;
+        } else if (currentNode.data < value) {
+          currentNode = currentNode.right;
+        }
+        if (currentNode === null) {
+          return false;
+        }
+      }
+    }
+  }
+  removeOne(value) {
+    if (this.root.data === value) {
+      return true;
+    } else {
+      let currentNode = this.root;
+      while (true) {
+        if (currentNode.data === value) {
+          //if two children
+          currentNode.data = null;
+          currentNode.right.data = null;
+          return currentNode; 
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
         } else if (currentNode.data < value) {

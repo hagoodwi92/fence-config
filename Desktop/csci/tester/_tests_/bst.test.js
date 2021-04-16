@@ -113,10 +113,12 @@ describe("binarySearchTree", () => {
   test('should remove a leaf node', () => {
     expect(pbst.remove(1)).toEqual({"data": null, "left": null, "right": null});
   });
-
+  
   test('should remove a node with one child', () => {
-    expect(pbst.remove(7)).toEqual({"data": null, "left": null, "right": {"data": null, "left": null, "right": null}});
-  });
+    expect(pbst.removeOne(7)).toEqual({"data": null, "left": null, "right": {"data": null, "left": null, "right": null}}); 
+  });     
+       
+  //{"data": null, "left": null, "right": {"data": null, "left": null, "right": null}}
 
   test('should remove a node with 2 children', () => {
     expect(pbst.remove(2)).toEqual({"data": null, "left": {"data": null, "left": null, "right": null}, "right": {"data": null, "left": null, "right": null}});
