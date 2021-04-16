@@ -10,7 +10,10 @@ export default class BST {
       let currentNode = this.root;
       while (true) {
         if (currentNode.data === value) {
-          currentNode.data = null;
+          //if no children
+          if (currentNode.data.right == null || currentNode.data.left == null) {
+            currentNode.data = null;
+          }
           return currentNode;
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
@@ -22,7 +25,7 @@ export default class BST {
         }
       }
     }
-}
+  }
 
   search(value) {
     if (this.root.data === value) {
