@@ -86,41 +86,83 @@ describe("binarySearchTree", () => {
       root: { data: 36, left: null, right: null },
     });
   });
-  test('it should return true if the root node is equal to 4', () => {
+  test("it should return true if the root node is equal to 4", () => {
     expect(pbst.search(4)).toEqual(true);
   });
 
-  test('it should return false if the root node is not equal to 31', () => {
+  test("it should return false if the root node is not equal to 31", () => {
     expect(pbst.search(31)).toEqual(false);
   });
 
-  test('it should return if the value 0 is not in the tree', () => {
+  test("it should return if the value 0 is not in the tree", () => {
     expect(pbst.search(0)).toEqual(false);
   });
 
-  test('it should return true if the tree includes 7', () => {
+  test("it should return true if the tree includes 7", () => {
     expect(pbst.search(7)).toEqual(true);
   });
-  
-  test('it should return true if the tree includes 5', () => {
+
+  test("it should return true if the tree includes 5", () => {
     expect(pbst.search(5)).toEqual(true);
   });
 
-  test('should return false if the node to be removed doesnt exist in the tree', () => {
+  test("should return false if the node to be removed doesnt exist in the tree", () => {
     expect(pbst.remove(99)).toEqual(false);
   });
 
-  test('should remove a leaf node', () => {
-    expect(pbst.remove(1)).toEqual({"data": null, "left": null, "right": null});
+  test("should remove a leaf node", () => {
+    expect(pbst.remove(1)).toEqual({ data: null, left: null, right: null });
   });
-  
-  test('should remove a node with one child', () => {
-    expect(pbst.removeOne(7)).toEqual({"data": null, "left": null, "right": {"data": null, "left": null, "right": null}}); 
-  });     
-       
-  //{"data": null, "left": null, "right": {"data": null, "left": null, "right": null}}
 
-  test('should remove a node with 2 children', () => {
-    expect(pbst.remove(2)).toEqual({"data": null, "left": {"data": null, "left": null, "right": null}, "right": {"data": null, "left": null, "right": null}});
+  test("should remove a node with one child", () => {
+    expect(pbst.removeOne(7)).toEqual({
+      root: {
+        data: 4,
+        left: {
+          data: 2,
+          left: {
+            data: null,
+            left: null,
+            right: { data: 1, left: null, right: null },
+          },
+          right: { data: 3, left: null, right: null },
+        },
+        right: {
+          data: 6,
+          left: { data: 5, left: null, right: null },
+          right: {
+            data: 8,
+            left: null,
+            right: { data: null, left: null, right: null },
+          },
+        },
+      },
+    });
   });
-}); 
+
+  test("should remove a node with 2 children", () => {
+    expect(pbst.removeTwo(2)).toEqual({
+      root: {
+        data: 4,
+        left: {
+          data: null,
+          left: {
+            data: null,
+            left: null,
+            right: { data: 1, left: null, right: null },
+          },
+          right: { data: 3, left: null, right: null },
+        },
+        right: {
+          data: 6,
+          left: { data: 5, left: null, right: null },
+          right: {
+            data: 8,
+            left: { data: 7, left: null, right: null },
+            right: { data: null, left: null, right: null },
+          },
+        },
+      },
+    });
+  });
+});

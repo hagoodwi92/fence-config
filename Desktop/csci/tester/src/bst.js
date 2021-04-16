@@ -32,9 +32,32 @@ export default class BST {
       while (true) {
         if (currentNode.data === value) {
           //if two children
-          currentNode.data = null;
+          currentNode.data = currentNode.right.data;
           currentNode.right.data = null;
-          return currentNode; 
+          return this; 
+        } else if (currentNode.data > value) {
+          currentNode = currentNode.left;
+        } else if (currentNode.data < value) {
+          currentNode = currentNode.right;
+        }
+        if (currentNode === null) {
+          return false;
+        }
+      }
+    }
+  }
+
+  removeTwo(value) {
+    if (this.root.data === value) {
+      return true;
+    } else {
+      let currentNode = this.root;
+      while (true) {
+        if (currentNode.data === value) {
+          //if 2 children
+          currentNode.data = currentNode.left.data;
+          currentNode.left.data = null;
+          return this;
         } else if (currentNode.data > value) {
           currentNode = currentNode.left;
         } else if (currentNode.data < value) {
